@@ -24,14 +24,15 @@ You should import these in the following order
 @import 'rhythm/rhythm_vars';
 @import 'rhythm/rhythm_helpers';
 @import 'rhythm/rhythm';
-
+@import 'rhythm/rhythm_horiz';
 
 Table of Contents
 ==========
 
 The rhythm_vars file has all the default variables for you to configure. Here you'd set default font size, line height, margin and padding. I've also included a variety of font scaling variables to use (there's an example of how to use them in rhythm_starters)
 The rhythm_helpers file has the secondary functions that help with some of the lifting of our other mixins
-The rhythm file has the 3 mixins you'll be using to set up your sizes, line heights, padding, borders, and margins.
+The rhythm file has the 4 mixins you'll be using to set up your sizes, line heights, padding, borders, and margins.
+The rhythm_horiz file allows for setting padding and margins relative to line height. There is also a horizontal border padding corrector if you used the border mixin from the rhythm file.
 
 
 Gotchas
@@ -86,3 +87,9 @@ Unfortunately at this time if you would like border top and border bottom but no
 
 Example
 @include border_rhythm(24, px, 0, 1, 2px solid #000, 0px, 1px solid #FF0000);
+
+If you would like to set a larger line height for certain elements (headings for example) there is also a mixin for multiplying out your line height
+
+Example
+@include height_multiplier(45, em, 2);
+
